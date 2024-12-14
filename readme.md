@@ -21,6 +21,8 @@ A RESTful API template built with Node.js, Express, TypeScript, and PostgreSQL u
 
 ## Setup
 
+Make sure you create a .env.local file in the root of the project with any environment variables you need while developing.
+
 ```bash
 # Use specified node version
 nvm use
