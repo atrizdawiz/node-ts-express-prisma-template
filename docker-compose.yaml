@@ -38,6 +38,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
   prisma-studio:
+    profiles: ['studio']
     build:
       context: .
       dockerfile: Dockerfile
@@ -53,6 +54,7 @@ services:
     depends_on:
       - db
   prisma-push-schema-to-db:
+    profiles: ['db-push']
     build:
       context: .
       dockerfile: Dockerfile

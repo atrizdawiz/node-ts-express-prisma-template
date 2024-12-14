@@ -38,15 +38,18 @@ npx prisma migrate dev
 ## Docker Development
 
 ```bash
-# Start with Docker Compose (in watch mode)
+# Start app and db with Docker Compose (in watch mode)
 docker compose watch
 
 # Stop containers
 docker compose down
 
-# Start prisma studio (ui for data inspection)
-docker compose up prisma-studio
+# Start only app and db (build mode)
+docker compose up
 
-# Push the current prisma schema to the db (creates db if it does not exists)
-docker compose up prisma-push-schema-to-db
+# Run prisma studio when needed
+docker compose --profile studio up prisma-studio
+
+# Run schema push when needed
+docker compose --profile db-push up prisma-push-schema-to-db
 ```
